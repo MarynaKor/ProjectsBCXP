@@ -1,0 +1,8 @@
+CREATE TABLE T_PROJECT (
+    ID SERIAL PRIMARY KEY,
+    TITLE VARCHAR(255),
+    DESCRIPTION CHAR
+);
+
+INSERT INTO T_PROJECT ( TITLE, DESCRIPTION) VALUES ( 'Bmw-Projekt', 'Auto Konfiguration in der App');
+INSERT INTO T_PROJECT ( TITLE, DESCRIPTION) VALUES ( 'Barmer', 'Online LogIn Webapplication');

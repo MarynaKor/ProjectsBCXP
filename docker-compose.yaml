@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres-latest'
+    environment:
+      - 'POSTGRES_DB=Projects'
+      - 'POSTGRES_USER=project'
+      - 'POSTGRES-PASSWORD=secret'
+    ports:
+      - '5432:5432'
