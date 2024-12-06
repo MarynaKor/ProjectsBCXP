@@ -1,8 +1,8 @@
-CREATE TABLE T_PROJECT (
+CREATE TABLE t_project (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
     description VARCHAR(255)
 );
 
-INSERT INTO T_PROJECT ( title, description) VALUES ( 'Bmw-Projekt', 'Auto Konfiguration in der App');
-INSERT INTO T_PROJECT ( title, description) VALUES ( 'Barmer', 'Online LogIn Webapplication');
+INSERT INTO t_project ( title, description) VALUES ( 'Bmw-Projekt', 'Auto Konfiguration in der App');
+INSERT INTO t_project ( title, description) VALUES ( 'Barmer', 'Online LogIn Webapplication');
