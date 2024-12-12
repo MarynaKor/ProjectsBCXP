@@ -1,16 +1,8 @@
-To set up this project we need to first create a docker network
- - docker network create my_network
+Now we need to run maven clean and install first.
+Make a snapshot, with this you should be able to build the image of the project 
+as soon as the image is done you can start the builde
+-- docker compose -f docker-compose.yaml build
 
-Postgresql docker setup (you have to be in the right directory in you cd (goe intop the directory of your db)
-#Build PostfresSQL image (From the position of the Dockerfile)
-- docker build . -t postgres_db
+and now run the compose file
 
-#Run Postgres container from image
-- docker run --name my_database --network my_network postgres_db
-
-Spring Boot docker setup(here your in your (Poject directory so that your able to access the spirngboot api dockerfile and the jar)
-#Build Spring boot image (From the position of the Dockerfile)
-- docker build . -t spring_boot_service
-
-#Run backend service and hos tit on localhost port 8080
-- docker run -d -p 8080:8080 --name backend --network my_network spring_boot_service
+-- docker compose -f docker-compose.yaml up

@@ -27,4 +27,8 @@ public class ProjectsService implements ProjectInterface {
                 .map(projectsMapper::fromEntity)
                 .toList();
     }
+
+    public ProjectsTO addProject(ProjectsTO projectsTO) {
+
+    }
 }
