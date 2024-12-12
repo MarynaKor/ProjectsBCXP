@@ -27,8 +27,9 @@ public class ProjectsService implements ProjectInterface {
                 .map(projectsMapper::fromEntity)
                 .toList();
     }
-
+    @Override
     public ProjectsTO addProject(ProjectsTO projectsTO) {
-
+        var newProject = projectsMapper.toEntity(projectsTO);
+        return projectsMapper.fromEntity(projectRepository.save(newProject));
     }
 }

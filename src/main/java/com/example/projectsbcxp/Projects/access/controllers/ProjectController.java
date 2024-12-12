@@ -1,12 +1,8 @@
 package com.example.projectsbcxp.Projects.access.controllers;
 import com.example.projectsbcxp.Projects.api.ProjectInterface;
 import com.example.projectsbcxp.Projects.api.to.ProjectsTO;
-import com.example.projectsbcxp.Projects.impl.business.ProjectsMapper;
-import com.example.projectsbcxp.Projects.impl.business.ProjectsService;
-import com.example.projectsbcxp.Projects.impl.data.repository.ProjectRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -26,6 +22,11 @@ public class ProjectController {
     @GetMapping("/projects")
     public List<ProjectsTO> getAllActiveProjects(){
         return projectService.getActiveProjects() ;
+    }
+
+    @PostMapping("/projects")
+    public ProjectsTO createProjects(@RequestBody ProjectsTO projectsTO){
+        return projectService.addProject(projectsTO);
     }
 
 

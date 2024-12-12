@@ -6,4 +6,5 @@ public interface ProjectInterface {
 
 
     List<ProjectsTO> getActiveProjects();
+    ProjectsTO addProject(ProjectsTO project);
 }
