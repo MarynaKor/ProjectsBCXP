@@ -1,11 +1,17 @@
-package com.example.projectsbcxp.data.entities;
+package com.example.projectsbcxp.Projects.impl.data.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
 @Data
 @Entity
 @Table(name="T_PROJECT")
-public class Project {
+@Getter
+@Setter
+@ToString
+@Builder
+@RequiredArgsConstructor
+@AllArgsConstructor
+public class ProjectEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
