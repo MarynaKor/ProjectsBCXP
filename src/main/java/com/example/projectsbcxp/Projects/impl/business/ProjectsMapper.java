@@ -22,7 +22,6 @@ public class ProjectsMapper {
     @ReturnNullOnNullParameter
     public ProjectEntity toEntity(ProjectsTO project) {
         return ProjectEntity.builder()
-                .id(project.id())
                 .title(project.title())
                 .description(project.description())
                 .build();
