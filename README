@@ -1,6 +1,6 @@
 Now we need to run maven clean and install first.
 Make a snapshot, with this you should be able to build the image of the project 
-as soon as the image is done you can start the builde
+as soon as the image is done you can start the builder
 -- docker compose -f docker-compose.yaml build
 
 and now run the compose file
@@ -8,7 +8,7 @@ and now run the compose file
 -- docker compose -f docker-compose.yaml up
 
 Next To-Do's
-- create a field "starting date" for Projects-done
+- create a field "starting date" for Projects -- done
 - create a field for how many days it is running
 - also create new Entity Person
 - combine those two

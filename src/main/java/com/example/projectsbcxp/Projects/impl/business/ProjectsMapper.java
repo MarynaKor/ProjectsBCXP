@@ -15,6 +15,7 @@ public class ProjectsMapper {
                 .title(project.getTitle())
                 .description(project.getDescription())
                 .starting_at(project.getStarting_at())
+                .ending_at(project.getEnding_at())
                 .build();
     }
 
@@ -24,6 +25,7 @@ public class ProjectsMapper {
                 .title(project.title())
                 .description(project.description())
                 .starting_at(project.starting_at())
+                .ending_at(project.ending_at())
                 .build();
     }
 

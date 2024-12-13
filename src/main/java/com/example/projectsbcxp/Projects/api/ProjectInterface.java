@@ -7,7 +7,8 @@ import java.util.List;
 public interface ProjectInterface {
 
 
-    List<ProjectsTO> getActiveProjects();
+    List<ProjectsTO> getAllProjects();
     ProjectEntity addProject(ProjectsTO project);
     ProjectsTO getProjectById(int id);
+    List<ProjectsTO> getActiveProjects();
 }

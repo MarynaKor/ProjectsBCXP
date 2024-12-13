@@ -25,7 +25,7 @@ public class ProjectsService implements ProjectInterface {
      * @return Liste aller gefundenen Zeilen, sonst leere Liste
      */
     @Override
-    public List<ProjectsTO> getActiveProjects() {
+    public List<ProjectsTO> getAllProjects() {
         List<ProjectEntity> projectsEntity = projectRepository.findAll();
         return projectsEntity.stream()
                 .map(projectsMapper::fromEntity)
@@ -42,5 +42,12 @@ public class ProjectsService implements ProjectInterface {
     public ProjectsTO getProjectById(int id) {
         ProjectEntity projectWithId = projectRepository.findById(id).orElseThrow();
         return projectsMapper.fromEntity(projectWithId);
+    }
+
+    public List<ProjectsTO> getActiveProjects() {
+        List<ProjectEntity> activeProjectsEntity= projectRepository.getActiveProjects();
+        return activeProjectsEntity.stream()
+                .map(projectsMapper::fromEntity)
+                .toList();
     }
 }

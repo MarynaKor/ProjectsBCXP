@@ -20,8 +20,13 @@ public class ProjectController {
 
 
 
-    @GetMapping("/projects")
+    @GetMapping
     public List<ProjectsTO> getAllActiveProjects(){
+        return projectService.getAllProjects() ;
+    }
+
+    @GetMapping("/projects")
+    public List<ProjectsTO> getActiveProjects(){
         return projectService.getActiveProjects() ;
     }
 

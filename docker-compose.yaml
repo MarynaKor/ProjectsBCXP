@@ -24,3 +24,11 @@ services:
     depends_on:
       - 'postgres'
     #restart: 'always'
+
+  #nginx:
+   # container_name: projects-frontend
+   # build: nginx/
+  # ports:
+   #   - "8088:80"
+   # extra_hosts:
+   #  - "host.docker.internal:host-gateway"

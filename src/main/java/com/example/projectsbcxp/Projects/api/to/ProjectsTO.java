@@ -12,7 +12,8 @@ import java.sql.Timestamp;
     public record ProjectsTO(Integer id,
                              String title,
                              String description,
-                             Timestamp starting_at) {
+                             Timestamp starting_at,
+                             Timestamp ending_at) {
 }
 
 
