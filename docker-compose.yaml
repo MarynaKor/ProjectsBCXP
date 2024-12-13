@@ -23,4 +23,4 @@ services:
       db-password: 'secret'
     depends_on:
       - 'postgres'
-    restart: 'always'
+    #restart: 'always'

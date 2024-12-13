@@ -5,8 +5,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.example.projectsbcxp.tecbase.utils.nullcheck.ReturnNullOnNullParameter;
 
-import java.util.List;
-
 @Service
 @RequiredArgsConstructor
 public class ProjectsMapper {
@@ -16,6 +14,7 @@ public class ProjectsMapper {
                 .id(project.getId())
                 .title(project.getTitle())
                 .description(project.getDescription())
+                .starting_at(project.getStarting_at())
                 .build();
     }
 
@@ -24,6 +23,7 @@ public class ProjectsMapper {
         return ProjectEntity.builder()
                 .title(project.title())
                 .description(project.description())
+                .starting_at(project.starting_at())
                 .build();
     }
 

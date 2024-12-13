@@ -1,6 +1,9 @@
 package com.example.projectsbcxp.Projects.impl.data.entities;
 import jakarta.persistence.*;
 import lombok.*;
+import org.antlr.v4.runtime.misc.NotNull;
+
+import java.sql.Timestamp;
 
 @Data
 @Entity
@@ -18,5 +21,5 @@ public class ProjectEntity {
     private int id;
     private String title;
     private String description;
-
+    private Timestamp starting_at;
 }

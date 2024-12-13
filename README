@@ -6,3 +6,11 @@ as soon as the image is done you can start the builde
 and now run the compose file
 
 -- docker compose -f docker-compose.yaml up
+
+Next To-Do's
+- create a field "starting date" for Projects-done
+- create a field for how many days it is running
+- also create new Entity Person
+- combine those two
+- copy the nginx from the SpringApp and test it if it works on yours...
+
