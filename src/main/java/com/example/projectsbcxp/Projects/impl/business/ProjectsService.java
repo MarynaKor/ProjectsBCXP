@@ -37,4 +37,10 @@ public class ProjectsService implements ProjectInterface {
         projectRepository.save(newProject);
         return newProject;
     }
+
+    @Override
+    public ProjectsTO getProjectById(int id) {
+        ProjectEntity projectWithId = projectRepository.findById(id).orElseThrow();
+        return projectsMapper.fromEntity(projectWithId);
+    }
 }

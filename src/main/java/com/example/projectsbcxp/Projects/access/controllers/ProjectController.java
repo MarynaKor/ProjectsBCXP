@@ -30,6 +30,10 @@ public class ProjectController {
         return projectService.addProject(projectsTO);
     }
 
+    @GetMapping("/{id}")
+    public ProjectsTO getProjectById(@PathVariable int id){
+        return projectService.getProjectById(id);
+    }
 
 }
 

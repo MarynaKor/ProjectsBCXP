@@ -9,4 +9,5 @@ public interface ProjectInterface {
 
     List<ProjectsTO> getActiveProjects();
     ProjectEntity addProject(ProjectsTO project);
+    ProjectsTO getProjectById(int id);
 }
