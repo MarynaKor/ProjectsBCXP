@@ -15,7 +15,7 @@ public interface ProjectRepository extends JpaRepository<ProjectEntity, Integer>
     @Query(nativeQuery = true, value = """
     SELECT *
     FROM T_PROJECT
-    WHERE starting_at < NOW() AND ending_at >= NOW() AND ending_at IS NULL 
+    WHERE (starting_at < NOW() AND ending_at >= NOW()) OR (ending_at IS NULL  AND starting_at < NOW())
     """)
     List<ProjectEntity> getActiveProjects();
 }
