@@ -7,5 +7,7 @@ import java.sql.Timestamp;
 public record  PersonInProjectTO(Integer id,
                                  String name,
                                  String title,
-                                 Timestamp startInProjectDate ){
+                                 Timestamp startInProjectDate,
+                                 Timestamp endInProjectDate,
+                                 Integer daysActive){
 }

@@ -18,7 +18,9 @@ public class PersonProjectPositionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private Timestamp startInProjectDate;
+    private Timestamp start_in_project;
+    private Timestamp end_in_project;
+    private int days_active;
 
     @ManyToOne
     @JoinColumn(name = "person_id")

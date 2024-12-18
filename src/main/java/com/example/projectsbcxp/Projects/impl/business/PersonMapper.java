@@ -33,7 +33,9 @@ public class PersonMapper {
                 .id(personProjectPositionEntity.getPerson().getId())
                 .name(personProjectPositionEntity.getPerson().getName())
                 .title(personProjectPositionEntity.getPerson().getTitle())
-                .startInProjectDate(personProjectPositionEntity.getStartInProjectDate())
+                .startInProjectDate(personProjectPositionEntity.getStart_in_project())
+                .endInProjectDate(personProjectPositionEntity.getEnd_in_project())
+                .daysActive(personProjectPositionEntity.getDays_active())
                 .build();
     }
 
