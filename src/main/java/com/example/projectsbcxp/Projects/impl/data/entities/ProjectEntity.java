@@ -5,9 +5,8 @@ import lombok.*;
 import java.sql.Timestamp;
 import java.util.List;
 
-@Data
 @Entity
-@Table(name="T_PROJECT")
+@Table(name="t_project")
 @Getter
 @Setter
 @ToString
@@ -23,7 +22,7 @@ public class ProjectEntity {
     private String description;
     private Timestamp starting_at;
     private Timestamp ending_at;
-    @OneToMany
+    @OneToMany(mappedBy = "t_project")
     @ToString.Exclude
     private List<PersonProjectPositionEntity> personProjectPosition;
 }

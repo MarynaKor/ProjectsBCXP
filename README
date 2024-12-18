@@ -9,8 +9,8 @@ and now run the compose file
 
 Next To-Do's
 - create a field "starting date" for Projects -- done
-- create a field for how many days it is running
-- also create new Entity Person
-- combine those two
-- copy the nginx from the SpringApp and test it if it works on yours...
+- create a field for how many days it is running -- next to do
+- also create new Entity Person -- done
+- combine those two -- done
+- copy the nginx from the SpringApp and test it if it works on yours...-- does not work :( what to do ? create your own frontend?
 
