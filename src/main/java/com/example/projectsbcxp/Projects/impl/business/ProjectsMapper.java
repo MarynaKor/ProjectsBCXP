@@ -1,5 +1,6 @@
 package com.example.projectsbcxp.Projects.impl.business;
 import com.example.projectsbcxp.Projects.api.to.ProjectsTO;
+import com.example.projectsbcxp.Projects.api.to.PersonInProjectTO;
 import com.example.projectsbcxp.Projects.impl.data.entities.ProjectEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,7 @@ public class ProjectsMapper {
                 .personen(project.getPersonProjectPosition().stream()
                         .map(personMapper::fromPersonProjectPosition)
                         .toList())
+
                 .build();
     }
 

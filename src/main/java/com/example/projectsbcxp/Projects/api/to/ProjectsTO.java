@@ -16,7 +16,7 @@ import java.util.List;
                              Timestamp starting_at,
                              Timestamp ending_at,
                              Integer active_project_days,
-                             List<PersonTO> personen) {
+                             List<PersonInProjectTO> personen) {
 }
 
 
