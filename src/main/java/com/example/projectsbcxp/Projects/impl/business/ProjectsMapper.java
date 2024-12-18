@@ -18,6 +18,7 @@ public class ProjectsMapper {
                 .description(project.getDescription())
                 .starting_at(project.getStarting_at())
                 .ending_at(project.getEnding_at())
+                .active_project_days(project.getActive_project_days())
                 .personen(project.getPersonProjectPosition().stream()
                         .map(personMapper::fromPersonProjectPosition)
                         .toList())

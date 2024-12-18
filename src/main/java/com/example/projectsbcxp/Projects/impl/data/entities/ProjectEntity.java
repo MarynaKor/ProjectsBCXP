@@ -22,6 +22,7 @@ public class ProjectEntity {
     private String description;
     private Timestamp starting_at;
     private Timestamp ending_at;
+    private int active_project_days;
     @OneToMany(mappedBy = "t_project")
     @ToString.Exclude
     private List<PersonProjectPositionEntity> personProjectPosition;
