@@ -2,6 +2,7 @@ package com.example.projectsbcxp.Projects.api.to;
 import lombok.Builder;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * TODO
@@ -13,7 +14,8 @@ import java.sql.Timestamp;
                              String title,
                              String description,
                              Timestamp starting_at,
-                             Timestamp ending_at) {
+                             Timestamp ending_at,
+                             List<PersonTO> personen) {
 }
 
 

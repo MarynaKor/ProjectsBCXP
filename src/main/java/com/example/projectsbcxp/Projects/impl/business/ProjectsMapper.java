@@ -8,6 +8,8 @@ import com.example.projectsbcxp.tecbase.utils.nullcheck.ReturnNullOnNullParamete
 @Service
 @RequiredArgsConstructor
 public class ProjectsMapper {
+
+    private final PersonMapper personMapper;
     @ReturnNullOnNullParameter
     public ProjectsTO fromEntity(ProjectEntity project) {
         return ProjectsTO.builder()
@@ -16,6 +18,9 @@ public class ProjectsMapper {
                 .description(project.getDescription())
                 .starting_at(project.getStarting_at())
                 .ending_at(project.getEnding_at())
+                .personen(project.getPersonProjectPosition().stream()
+                        .map(personMapper::fromPersonProjectPosition)
+                        .toList())
                 .build();
     }
 
@@ -28,6 +33,7 @@ public class ProjectsMapper {
                 .ending_at(project.ending_at())
                 .build();
     }
+
 
 
 }
