@@ -2,6 +2,7 @@ package com.example.projectsbcxp.Projects.impl.business;
 import com.example.projectsbcxp.Projects.api.ProjectInterface;
 import com.example.projectsbcxp.Projects.api.to.ProjectsTO;
 import com.example.projectsbcxp.Projects.impl.data.entities.ProjectEntity;
+import com.example.projectsbcxp.Projects.impl.data.repository.PersonInProjectRepo;
 import com.example.projectsbcxp.Projects.impl.data.repository.ProjectRepository;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

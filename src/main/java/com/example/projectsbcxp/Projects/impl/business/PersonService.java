@@ -5,8 +5,10 @@ import com.example.projectsbcxp.Projects.api.to.PersonInProjectTO;
 import com.example.projectsbcxp.Projects.api.to.PersonTO;
 import com.example.projectsbcxp.Projects.api.to.ProjectsTO;
 import com.example.projectsbcxp.Projects.impl.data.entities.PersonEntity;
+import com.example.projectsbcxp.Projects.impl.data.entities.PersonInProject;
 import com.example.projectsbcxp.Projects.impl.data.entities.PersonProjectPositionEntity;
 import com.example.projectsbcxp.Projects.impl.data.entities.ProjectEntity;
+import com.example.projectsbcxp.Projects.impl.data.repository.PersonInProjectRepo;
 import com.example.projectsbcxp.Projects.impl.data.repository.PersonRepository;
 import com.example.projectsbcxp.Projects.impl.data.repository.ProjectRepository;
 import lombok.AllArgsConstructor;
@@ -23,12 +25,22 @@ import java.util.List;
 public class PersonService implements PersonInterface {
     private PersonRepository personRepository;
     private PersonMapper personMapper;
+    private PersonInProjectRepo personInProjectRepo;
+    private PersonInProjectMapper personInProjectMapper;
 
     @Override
     public List<PersonTO> getActivePersons() {
-        List<PersonEntity> activePersonsEntity= personRepository.getActivePositionsInProject();
+        List<PersonEntity> activePersonsEntity= personRepository.getActivePersons();
         return activePersonsEntity.stream()
                 .map(personMapper::fromEntity)
+                .toList();
+    }
+
+    @Override
+    public List<PersonInProjectTO> getActivePositionsInProject(){
+        List<PersonProjectPositionEntity> activePersonsEntity= personInProjectRepo.getActivePositionsInProject();
+        return activePersonsEntity.stream()
+                .map(personMapper::fromActivePersons)
                 .toList();
     }
 }

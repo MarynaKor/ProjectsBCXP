@@ -45,9 +45,14 @@ public class ProjectController {
         return projectService.getProjectById(id);
     }
 
-    @GetMapping("/positions")
+    @GetMapping("/personsActive")
     public List<PersonTO> getActivePersonsInProjects(){
         return personService.getActivePersons() ;
+    }
+
+    @GetMapping("/positions")
+    List<PersonInProjectTO> getAllActivePositions(){
+        return personService.getActivePositionsInProject() ;
     }
 }
 

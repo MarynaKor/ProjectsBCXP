@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface PersonInterface {
     List<PersonTO> getActivePersons();
+    List<PersonInProjectTO> getActivePositionsInProject();
 }
