@@ -2,6 +2,7 @@ package com.example.projectsbcxp.Projects.access.controllers;
 import com.example.projectsbcxp.Projects.api.PersonInterface;
 import com.example.projectsbcxp.Projects.api.ProjectInterface;
 import com.example.projectsbcxp.Projects.api.to.PersonInProjectTO;
+import com.example.projectsbcxp.Projects.api.to.PersonTO;
 import com.example.projectsbcxp.Projects.api.to.ProjectsTO;
 import com.example.projectsbcxp.Projects.impl.data.entities.ProjectEntity;
 import lombok.AllArgsConstructor;
@@ -23,8 +24,9 @@ public class ProjectController {
 
 
 
+
     @GetMapping
-    public List<ProjectsTO> getAllActiveProjects(){
+    List<ProjectsTO> getAllActiveProjects(){
         return projectService.getAllProjects() ;
     }
 
@@ -44,7 +46,7 @@ public class ProjectController {
     }
 
     @GetMapping("/positions")
-    public List<PersonInProjectTO> getActivePersons(){
+    public List<PersonTO> getActivePersonsInProjects(){
         return personService.getActivePersons() ;
     }
 }

@@ -9,9 +9,10 @@ import java.util.List;
 
 public interface PersonRepository extends JpaRepository<PersonEntity, Integer>   {
     @Query(nativeQuery = true, value = """
-    SELECT *
-    FROM t_personprojectposition
-    WHERE (start_in_project < NOW() AND end_in_project >= NOW()) OR (end_in_project IS NULL  AND start_in_project < NOW())
+    SELECT t_person.*
+    FROM t_person
+             JOIN t_personprojectposition tppp on t_person.id = tppp.person_id
+    WHERE (start_in_project < NOW() AND end_in_project >= NOW()) OR (end_in_project IS NULL  AND start_in_project < NOW());
     """)
-    List<PersonProjectPositionEntity> getActivePositionsInProject();
+    List<PersonEntity> getActivePositionsInProject();
 }
