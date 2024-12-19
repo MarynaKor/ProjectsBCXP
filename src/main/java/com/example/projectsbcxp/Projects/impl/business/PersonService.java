@@ -26,7 +26,6 @@ public class PersonService implements PersonInterface {
     private PersonRepository personRepository;
     private PersonMapper personMapper;
     private PersonInProjectRepo personInProjectRepo;
-    private PersonInProjectMapper personInProjectMapper;
 
     @Override
     public List<PersonTO> getActivePersons() {

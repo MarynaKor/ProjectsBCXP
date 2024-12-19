@@ -1,6 +1,4 @@
 package com.example.projectsbcxp.Projects.impl.data.repository;
-import com.example.projectsbcxp.Projects.impl.data.entities.PersonEntity;
-import com.example.projectsbcxp.Projects.impl.data.entities.PersonInProject;
 import com.example.projectsbcxp.Projects.impl.data.entities.PersonProjectPositionEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
