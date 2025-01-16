@@ -5,6 +5,7 @@ import com.example.projectsbcxp.Projects.impl.data.entities.PersonEntity;
 import com.example.projectsbcxp.Projects.impl.data.entities.PersonInProject;
 import com.example.projectsbcxp.Projects.impl.data.entities.PersonProjectPositionEntity;
 
+import jakarta.annotation.Nullable;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.example.projectsbcxp.tecbase.utils.nullcheck.ReturnNullOnNullParameter;
@@ -13,7 +14,7 @@ import com.example.projectsbcxp.tecbase.utils.nullcheck.ReturnNullOnNullParamete
 @RequiredArgsConstructor
 public class PersonMapper {
     @ReturnNullOnNullParameter
-    public PersonTO fromEntity(PersonEntity person) {
+    public PersonTO fromEntity(@Nullable PersonEntity person) {
         return PersonTO.builder()
                 .id(person.getId())
                 .name(person.getName())

@@ -26,7 +26,7 @@ public class ProjectController {
 
 
     @GetMapping
-    List<ProjectsTO> getAllActiveProjects(){
+    List<ProjectsTO> getAllProjects(){
         return projectService.getAllProjects() ;
     }
 
@@ -45,6 +45,8 @@ public class ProjectController {
         return projectService.getProjectById(id);
     }
 
+
+    //not sure if I will ever need this call...reconsider this in the future!
     @GetMapping("/personsActive")
     public List<PersonTO> getActivePersonsInProjects(){
         return personService.getActivePersons() ;
@@ -53,6 +55,11 @@ public class ProjectController {
     @GetMapping("/positions")
     List<PersonInProjectTO> getAllActivePositions(){
         return personService.getActivePositionsInProject() ;
+    }
+
+    @PutMapping("/update/project")
+    public ProjectEntity updateProjects(@RequestBody ProjectsTO projectsTO){
+        return projectService.updateProject(projectsTO);
     }
 }
 

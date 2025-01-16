@@ -11,4 +11,5 @@ public interface ProjectInterface {
     ProjectEntity addProject(ProjectsTO project);
     ProjectsTO getProjectById(int id);
     List<ProjectsTO> getActiveProjects();
+    ProjectEntity updateProject(ProjectsTO project);
 }
