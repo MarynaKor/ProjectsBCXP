@@ -29,5 +29,5 @@ INSERT INTO t_person ( name, title) VALUES ( 'Tessa Test', 'Software Engineer');
 INSERT INTO t_person ( name, title) VALUES ( 'Luca Lucky', 'Projekt Manager');
 INSERT INTO t_person ( name, title) VALUES ( 'Mina Minestrone', 'Senior Software Engineer');
 INSERT INTO t_personprojectposition (start_in_project, days_active, person_id, project_id) VALUES ('2022-09-08 12:00:00' , 90, 1,1 );
-INSERT INTO t_personprojectposition (person_id, days_active, project_id) VALUES (2, 20,1 );
+INSERT INTO t_personprojectposition (start_in_project, days_active, person_id, project_id) VALUES ('2023-09-08 12:00:00',2, 20,1 );
 INSERT INTO t_personprojectposition (person_id, days_active, project_id) VALUES ( 3,56, 2)

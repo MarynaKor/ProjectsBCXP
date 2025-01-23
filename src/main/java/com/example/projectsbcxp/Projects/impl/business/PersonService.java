@@ -42,4 +42,20 @@ public class PersonService implements PersonInterface {
                 .map(personMapper::fromActivePersons)
                 .toList();
     }
+    @Override
+    public PersonProjectPositionEntity updatePosition (PersonInProjectTO personInProjectTO){
+        personInProjectRepo.findById(personInProjectTO.id()).orElseThrow();
+        PersonProjectPositionEntity updatedPosition = personMapper.toPersonProjectPosition(personInProjectTO);
+        personInProjectRepo.save(updatedPosition);
+        return updatedPosition;
+
+    }
+    /*@Override
+    //public ProjectEntity updateProject(ProjectsTO projectsTO){
+        projectRepository.findById(projectsTO.id()).orElseThrow();
+        ProjectEntity updatedProject = projectsMapper.toEntity(projectsTO);
+        projectRepository.save(updatedProject);
+        return updatedProject;
+
+    }*/
 }

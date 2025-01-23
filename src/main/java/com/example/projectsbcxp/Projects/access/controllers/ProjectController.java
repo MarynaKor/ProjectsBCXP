@@ -4,6 +4,7 @@ import com.example.projectsbcxp.Projects.api.ProjectInterface;
 import com.example.projectsbcxp.Projects.api.to.PersonInProjectTO;
 import com.example.projectsbcxp.Projects.api.to.PersonTO;
 import com.example.projectsbcxp.Projects.api.to.ProjectsTO;
+import com.example.projectsbcxp.Projects.impl.data.entities.PersonProjectPositionEntity;
 import com.example.projectsbcxp.Projects.impl.data.entities.ProjectEntity;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -60,6 +61,11 @@ public class ProjectController {
     @PutMapping("/update/project")
     public ProjectEntity updateProjects(@RequestBody ProjectsTO projectsTO){
         return projectService.updateProject(projectsTO);
+    }
+
+    @PutMapping("/update/position")
+    public PersonProjectPositionEntity updatePositions(@RequestBody PersonInProjectTO personTO){
+        return personService.updatePosition(personTO);
     }
 }
 

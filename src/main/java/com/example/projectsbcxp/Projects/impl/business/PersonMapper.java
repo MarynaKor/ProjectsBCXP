@@ -40,6 +40,17 @@ public class PersonMapper {
                 .daysActive(personProjectPositionEntity.getDays_active())
                 .build();
     }
+
+    public PersonProjectPositionEntity toPersonProjectPosition(PersonInProjectTO personInProjectTO) {
+        assert personInProjectTO != null;
+        return PersonProjectPositionEntity.builder()
+                .id(personInProjectTO.id())
+                .start_in_project(personInProjectTO.startInProjectDate())
+                .end_in_project(personInProjectTO.endInProjectDate())
+                .days_active(personInProjectTO.daysActive())
+                .build();
+    }
+
     @ReturnNullOnNullParameter
     public PersonInProjectTO fromActivePersons (PersonProjectPositionEntity personsActive) {
         return PersonInProjectTO.builder()
