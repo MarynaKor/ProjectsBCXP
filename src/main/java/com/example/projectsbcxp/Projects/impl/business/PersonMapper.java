@@ -40,21 +40,25 @@ public class PersonMapper {
                 .daysActive(personProjectPositionEntity.getDays_active())
                 .build();
     }
+/*
+    @ReturnNullOnNullParameter
+    public PersonInProjectTO fromPositionDirect(PersonProjectPositionEntity personProjectPositionEntity) {
+        return PersonInProjectTO.builder()
+                .id(personProjectPositionEntity.getId())
+                .name(personProjectPositionEntity.getPerson().getName())
+                .startInProjectDate(personProjectPositionEntity.getStart_in_project())
+                .endInProjectDate(personProjectPositionEntity.getEnd_in_project())
+                .daysActive(personProjectPositionEntity.getDays_active())
+                .daysActive(personProjectPositionEntity.getPerson().getId())
 
-    public PersonProjectPositionEntity toPersonProjectPosition(PersonInProjectTO personInProjectTO) {
-        assert personInProjectTO != null;
-        return PersonProjectPositionEntity.builder()
-                .id(personInProjectTO.id())
-                .start_in_project(personInProjectTO.startInProjectDate())
-                .end_in_project(personInProjectTO.endInProjectDate())
-                .days_active(personInProjectTO.daysActive())
                 .build();
-    }
+    }*/
 
+    //find a way to ignore all the other incoming fields!
     @ReturnNullOnNullParameter
     public PersonInProjectTO fromActivePersons (PersonProjectPositionEntity personsActive) {
         return PersonInProjectTO.builder()
-                .id((personsActive.getId()))
+                .id(personsActive.getId())
                 .name(personsActive.getPerson().getName())
                 .title(personsActive.getPerson().getTitle())
                 .startInProjectDate(personsActive.getStart_in_project())

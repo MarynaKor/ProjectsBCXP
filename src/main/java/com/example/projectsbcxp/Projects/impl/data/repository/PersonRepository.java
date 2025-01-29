@@ -16,4 +16,5 @@ public interface PersonRepository extends JpaRepository<PersonEntity, Integer>  
     WHERE (start_in_project < NOW() AND end_in_project >= NOW()) OR (end_in_project IS NULL  AND start_in_project < NOW());
     """)
     List<PersonEntity> getActivePersons();
+
 }
