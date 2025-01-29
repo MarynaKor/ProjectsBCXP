@@ -14,11 +14,21 @@ import com.example.projectsbcxp.tecbase.utils.nullcheck.ReturnNullOnNullParamete
 @RequiredArgsConstructor
 public class PersonMapper {
     @ReturnNullOnNullParameter
-    public PersonTO fromEntity(@Nullable PersonEntity person) {
+    public PersonTO fromEntity(PersonEntity person) {
         return PersonTO.builder()
                 .id(person.getId())
                 .name(person.getName())
                 .title(person.getTitle())
+                .build();
+    }
+
+    public PersonInProjectTO fromPositionEntity(PersonProjectPositionEntity personsPosition) {
+        return PersonInProjectTO.builder()
+                .id(personsPosition.getId())
+                .name(personsPosition.getPerson().getName())
+                .startInProjectDate(personsPosition.getStart_in_project())
+                .endInProjectDate(personsPosition.getEnd_in_project())
+                .daysActive(personsPosition.getDays_active())
                 .build();
     }
     @ReturnNullOnNullParameter

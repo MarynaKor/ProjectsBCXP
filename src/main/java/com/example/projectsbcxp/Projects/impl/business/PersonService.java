@@ -34,7 +34,11 @@ public class PersonService implements PersonInterface {
                 .map(personMapper::fromEntity)
                 .toList();
     }
-
+    @Override
+    public PersonInProjectTO getPositionById(int id) {
+        PersonProjectPositionEntity positionWithId = personInProjectRepo.findById(id).orElseThrow();
+        return personMapper.fromPositionEntity(positionWithId);
+    }
     @Override
     public List<PersonInProjectTO> getActivePositionsInProject(){
         List<PersonProjectPositionEntity> activePersonsEntity= personInProjectRepo.getActivePositionsInProject();

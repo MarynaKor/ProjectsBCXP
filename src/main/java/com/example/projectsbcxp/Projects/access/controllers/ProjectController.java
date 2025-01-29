@@ -24,8 +24,6 @@ public class ProjectController {
 
 
 
-
-
     @GetMapping
     List<ProjectsTO> getAllProjects(){
         return projectService.getAllProjects() ;
@@ -41,11 +39,15 @@ public class ProjectController {
         return projectService.addProject(projectsTO);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/project/{id}")
     public ProjectsTO getProjectById(@PathVariable int id){
         return projectService.getProjectById(id);
     }
 
+    @GetMapping("/position/{id}")
+    public PersonInProjectTO getPositionById(@PathVariable int id){
+        return personService.getPositionById(id);
+    }
 
     //not sure if I will ever need this call...reconsider this in the future!
     @GetMapping("/personsActive")

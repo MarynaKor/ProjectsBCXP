@@ -9,5 +9,6 @@ import java.util.List;
 public interface PersonInterface {
     List<PersonTO> getActivePersons();
     List<PersonInProjectTO> getActivePositionsInProject();
+    PersonInProjectTO getPositionById(int id);
     PersonProjectPositionEntity updatePosition (PersonInProjectTO personInProjectTO);
 }
