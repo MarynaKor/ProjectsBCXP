@@ -48,11 +48,11 @@ public class PersonService implements PersonInterface {
     }
 
     @Override
-    public PersonProjectPositionEntity updatePosition (PersonInProjectTO personInProjectTO){
+    public PersonInProjectTO updatePosition (PersonInProjectTO personInProjectTO){
         PersonProjectPositionEntity personPositionById = personInProjectRepo.findById(personInProjectTO.id()).orElseThrow();
         personPositionById.setDays_active(personInProjectTO.daysActive());
         personInProjectRepo.save(personPositionById);
-        return personPositionById;
+        return personMapper.fromPositionEntity(personPositionById);
 
     }
     /*@Override

@@ -10,5 +10,5 @@ public interface PersonInterface {
     List<PersonTO> getActivePersons();
     List<PersonInProjectTO> getActivePositionsInProject();
     PersonInProjectTO getPositionById(int id);
-    PersonProjectPositionEntity updatePosition (PersonInProjectTO personInProjectTO);
+    PersonInProjectTO updatePosition (PersonInProjectTO personInProjectTO);
 }

@@ -39,7 +39,7 @@ public class ProjectsService implements ProjectInterface {
         return newProject;
     }
 
-    // change it to setactivedays
+    // change it to projectsTO return
     @Override
     public ProjectEntity updateProject(ProjectsTO projectsTO){
         ProjectEntity projectToUpdate = projectRepository.findById(projectsTO.id()).orElseThrow();

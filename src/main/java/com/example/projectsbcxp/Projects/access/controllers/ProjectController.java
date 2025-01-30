@@ -65,8 +65,9 @@ public class ProjectController {
         return projectService.updateProject(projectsTO);
     }
 
+    //here
     @PutMapping("/update/position")
-    public PersonProjectPositionEntity updatePositions(@RequestBody PersonInProjectTO personInProjectTO){
+    public PersonInProjectTO updatePositions(@RequestBody PersonInProjectTO personInProjectTO){
         return personService.updatePosition(personInProjectTO);
     }
 }

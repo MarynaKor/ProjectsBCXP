@@ -26,6 +26,9 @@ public class PersonProjectPositionEntity {
     private Timestamp end_in_project;
     private int days_active;
 
+
+    //fragen Ralph oder Stefan ob sie wissen ob das auch gut funktoniert
+    //ausprobieren ohne da ich die entity nicht nach außen gebe
     @ManyToOne
     @JoinColumn(name = "person_id")
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
