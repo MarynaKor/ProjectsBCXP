@@ -2,10 +2,8 @@ package com.example.projectsbcxp.Projects.impl.business;
 import com.example.projectsbcxp.Projects.api.to.PersonTO;
 import com.example.projectsbcxp.Projects.api.to.PersonInProjectTO;
 import com.example.projectsbcxp.Projects.impl.data.entities.PersonEntity;
-import com.example.projectsbcxp.Projects.impl.data.entities.PersonInProject;
 import com.example.projectsbcxp.Projects.impl.data.entities.PersonProjectPositionEntity;
 
-import jakarta.annotation.Nullable;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.example.projectsbcxp.tecbase.utils.nullcheck.ReturnNullOnNullParameter;
@@ -26,9 +24,9 @@ public class PersonMapper {
         return PersonInProjectTO.builder()
                 .id(personsPosition.getId())
                 .name(personsPosition.getPerson().getName())
-                .startInProjectDate(personsPosition.getStart_in_project())
-                .endInProjectDate(personsPosition.getEnd_in_project())
-                .daysActive(personsPosition.getDays_active())
+                .startInProjectDate(personsPosition.getStartInProject())
+                .endInProjectDate(personsPosition.getEndInProject())
+                .daysActive(personsPosition.getDaysActive())
                 .build();
     }
     @ReturnNullOnNullParameter
@@ -45,24 +43,12 @@ public class PersonMapper {
                 .id(personProjectPositionEntity.getPerson().getId())
                 .name(personProjectPositionEntity.getPerson().getName())
                 .title(personProjectPositionEntity.getPerson().getTitle())
-                .startInProjectDate(personProjectPositionEntity.getStart_in_project())
-                .endInProjectDate(personProjectPositionEntity.getEnd_in_project())
-                .daysActive(personProjectPositionEntity.getDays_active())
+                .startInProjectDate(personProjectPositionEntity.getStartInProject())
+                .endInProjectDate(personProjectPositionEntity.getEndInProject())
+                .daysActive(personProjectPositionEntity.getDaysActive())
                 .build();
     }
-/*
-    @ReturnNullOnNullParameter
-    public PersonInProjectTO fromPositionDirect(PersonProjectPositionEntity personProjectPositionEntity) {
-        return PersonInProjectTO.builder()
-                .id(personProjectPositionEntity.getId())
-                .name(personProjectPositionEntity.getPerson().getName())
-                .startInProjectDate(personProjectPositionEntity.getStart_in_project())
-                .endInProjectDate(personProjectPositionEntity.getEnd_in_project())
-                .daysActive(personProjectPositionEntity.getDays_active())
-                .daysActive(personProjectPositionEntity.getPerson().getId())
 
-                .build();
-    }*/
 
     //find a way to ignore all the other incoming fields!
     @ReturnNullOnNullParameter
@@ -71,9 +57,9 @@ public class PersonMapper {
                 .id(personsActive.getId())
                 .name(personsActive.getPerson().getName())
                 .title(personsActive.getPerson().getTitle())
-                .startInProjectDate(personsActive.getStart_in_project())
-                .endInProjectDate(personsActive.getEnd_in_project())
-                .daysActive(personsActive.getDays_active())
+                .startInProjectDate(personsActive.getStartInProject())
+                .endInProjectDate(personsActive.getEndInProject())
+                .daysActive(personsActive.getDaysActive())
                 .build();
     }
 

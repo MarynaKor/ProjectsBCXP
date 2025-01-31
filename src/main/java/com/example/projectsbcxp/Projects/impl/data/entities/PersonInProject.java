@@ -16,8 +16,8 @@ public class PersonInProject {
     private int id;
     private String name;
     private String title;
-    private Timestamp start_in_project;
-    private Timestamp end_in_project;
-    private int days_active;
+    private Timestamp startInProject;
+    private Timestamp endInProject;
+    private int daysActive;
 
 }

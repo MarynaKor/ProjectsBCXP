@@ -4,7 +4,7 @@ import lombok.*;
 
 
 @Entity
-@Table(name="T_PERSON")
+@Table(name="person")
 @Getter
 @Setter
 @ToString

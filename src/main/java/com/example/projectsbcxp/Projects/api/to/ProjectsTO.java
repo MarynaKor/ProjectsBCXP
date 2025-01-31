@@ -13,9 +13,9 @@ import java.util.List;
     public record ProjectsTO(Integer id,
                              String title,
                              String description,
-                             Timestamp starting_at,
-                             Timestamp ending_at,
-                             Integer active_project_days,
+                             Timestamp startingAt,
+                             Timestamp endingAt,
+                             Integer activeProjectDays,
                              List<PersonInProjectTO> personen) {
 }
 

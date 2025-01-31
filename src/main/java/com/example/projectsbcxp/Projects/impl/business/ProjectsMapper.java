@@ -17,9 +17,9 @@ public class ProjectsMapper {
                 .id(project.getId())
                 .title(project.getTitle())
                 .description(project.getDescription())
-                .starting_at(project.getStarting_at())
-                .ending_at(project.getEnding_at())
-                .active_project_days(project.getActive_project_days())
+                .startingAt(project.getStartingAt())
+                .endingAt(project.getEndingAt())
+                .activeProjectDays(project.getActiveProjectDays())
                 .personen(project.getPersonProjectPosition().stream()
                         .map(personMapper::fromPersonProjectPosition)
                         .toList())
@@ -33,9 +33,9 @@ public class ProjectsMapper {
                 .id(project.getId())
                 .title(project.getTitle())
                 .description(project.getDescription())
-                .starting_at(project.getStarting_at())
-                .ending_at(project.getEnding_at())
-                .active_project_days(project.getActive_project_days())
+                .startingAt(project.getStartingAt())
+                .endingAt(project.getEndingAt())
+                .activeProjectDays(project.getActiveProjectDays())
                 .build();
     }
 
@@ -47,9 +47,9 @@ public class ProjectsMapper {
                 .id(project.id())
                 .title(project.title())
                 .description(project.description())
-                .starting_at(project.starting_at())
-                .ending_at(project.ending_at())
-                .active_project_days(project.active_project_days())
+                .startingAt(project.startingAt())
+                .endingAt(project.endingAt())
+                .activeProjectDays(project.activeProjectDays())
                 .build();
     }
 

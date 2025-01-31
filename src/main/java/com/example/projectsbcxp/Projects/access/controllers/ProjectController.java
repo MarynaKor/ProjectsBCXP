@@ -61,7 +61,7 @@ public class ProjectController {
     }
 
     @PutMapping("/update/project")
-    public ProjectEntity updateProjects(@RequestBody ProjectsTO projectsTO){
+    public ProjectsTO updateProjects(@RequestBody ProjectsTO projectsTO){
         return projectService.updateProject(projectsTO);
     }
 

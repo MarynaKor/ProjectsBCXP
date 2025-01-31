@@ -3,14 +3,10 @@ package com.example.projectsbcxp.Projects.impl.business;
 import com.example.projectsbcxp.Projects.api.PersonInterface;
 import com.example.projectsbcxp.Projects.api.to.PersonInProjectTO;
 import com.example.projectsbcxp.Projects.api.to.PersonTO;
-import com.example.projectsbcxp.Projects.api.to.ProjectsTO;
 import com.example.projectsbcxp.Projects.impl.data.entities.PersonEntity;
-import com.example.projectsbcxp.Projects.impl.data.entities.PersonInProject;
 import com.example.projectsbcxp.Projects.impl.data.entities.PersonProjectPositionEntity;
-import com.example.projectsbcxp.Projects.impl.data.entities.ProjectEntity;
 import com.example.projectsbcxp.Projects.impl.data.repository.PersonInProjectRepo;
 import com.example.projectsbcxp.Projects.impl.data.repository.PersonRepository;
-import com.example.projectsbcxp.Projects.impl.data.repository.ProjectRepository;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.extern.slf4j.Slf4j;
@@ -50,7 +46,7 @@ public class PersonService implements PersonInterface {
     @Override
     public PersonInProjectTO updatePosition (PersonInProjectTO personInProjectTO){
         PersonProjectPositionEntity personPositionById = personInProjectRepo.findById(personInProjectTO.id()).orElseThrow();
-        personPositionById.setDays_active(personInProjectTO.daysActive());
+        personPositionById.setDaysActive(personInProjectTO.daysActive());
         personInProjectRepo.save(personPositionById);
         return personMapper.fromPositionEntity(personPositionById);
 

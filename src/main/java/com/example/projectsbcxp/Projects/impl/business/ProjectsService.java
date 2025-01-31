@@ -2,7 +2,6 @@ package com.example.projectsbcxp.Projects.impl.business;
 import com.example.projectsbcxp.Projects.api.ProjectInterface;
 import com.example.projectsbcxp.Projects.api.to.ProjectsTO;
 import com.example.projectsbcxp.Projects.impl.data.entities.ProjectEntity;
-import com.example.projectsbcxp.Projects.impl.data.repository.PersonInProjectRepo;
 import com.example.projectsbcxp.Projects.impl.data.repository.ProjectRepository;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,14 +40,19 @@ public class ProjectsService implements ProjectInterface {
 
     // change it to projectsTO return
     @Override
-    public ProjectEntity updateProject(ProjectsTO projectsTO){
+    public ProjectsTO updateProject(ProjectsTO projectsTO){
         ProjectEntity projectToUpdate = projectRepository.findById(projectsTO.id()).orElseThrow();
-        projectToUpdate.setActive_project_days(projectsTO.active_project_days());
+        projectToUpdate.setActiveProjectDays(projectsTO.activeProjectDays());
         //ProjectEntity updatedProject = projectsMapper.toEntity(projectsTO);
         projectRepository.save(projectToUpdate);
-        projectToUpdate.setPersonProjectPosition(null);
-        return projectToUpdate;
+        return projectsMapper.fromEntity(projectToUpdate);
 
+        /*
+        PersonProjectPositionEntity personPositionById = personInProjectRepo.findById(personInProjectTO.id()).orElseThrow();
+        personPositionById.setDaysActive(personInProjectTO.daysActive());
+        personInProjectRepo.save(personPositionById);
+        return personMapper.fromPositionEntity(personPositionById);
+         */
     }
 
     @Override
